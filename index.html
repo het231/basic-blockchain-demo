@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Blockchain Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+  <h1>🔗 Visual Blockchain Demo</h1>
+
+  <div class="reference-block">
+    <h3>📘 Block Structure Reference</h3>
+    <div class="block">
+      <strong>Block #<i>index</i></strong><br>
+      <small><i>timestamp</i></small><br><br>
+      <div><strong>Transactions:</strong></div>
+      <div class="transaction">Alice → Bob : 50</div>
+      <div class="transaction">Charlie → Dave : 20</div>
+      <div><strong>Merkle Root:</strong><small>abc123...</small></div>
+      <div><strong>Prev Hash:</strong><small>0000...0000</small></div>
+      <div><strong>Hash:</strong><small>abcd1234efgh5678...</small></div>
+    </div>
+  </div>
+
+  <div class="input-area">
+    <h3>Add Transactions</h3>
+    <input type="text" id="from" placeholder="From">
+    <input type="text" id="to" placeholder="To">
+    <input type="number" id="amount" placeholder="Amount">
+    <button onclick="addTransaction()">Add Transaction</button>
+    <button onclick="addBlock()">Add Block</button>
+    <button onclick="validateChain()">Validate Chain</button>
+    <div id="transactionList"></div>
+  </div>
+
+  <div id="blockchain" class="blockchain"></div>
+
+  <script src="blockchain.js"></script>
+</body>
+</html>
